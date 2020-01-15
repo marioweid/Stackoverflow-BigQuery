@@ -1,6 +1,5 @@
 // Imports the Google Cloud client library
-import {BigQuery} from '@google-cloud/bigquery';
-
+const {BigQuery} = require('@google-cloud/bigquery');
 
 async function createDataset() {
   // Creates a client
@@ -18,6 +17,7 @@ async function createDataset() {
             Year`;
   const data = await bigQueryClient.query(que);
   console.log(data.keys());
+  return data
   // console.log(`Dataset ${dataset.id} created.`);
 }
 
